@@ -12,5 +12,11 @@ export class CdkSnsLambdaNodeStack extends cdk.Stack {
       region: 'EU',
     });
 
+    new SimpleLambda(this, 'SimpleLambda', {
+      stage: 'Dev',
+      region: 'EU',
+      simpleQueue: simpleEvents.simpleEventsQueue,
+    });
+
   }
 }
